@@ -7,6 +7,6 @@ namespace App\Controller;
 class IndexController
 {
     public function index() {
-        return "indexController";
+        return "Hello!";
     }
 }

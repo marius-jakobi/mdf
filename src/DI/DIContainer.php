@@ -24,7 +24,6 @@ class DIContainer
      */
     public function __construct() {
         $this->builder = new ContainerBuilder();
-        $this->builder->addDefinitions(__DIR__ . '../di-config.php');
 
         $this->container = $this->builder->build();
     }

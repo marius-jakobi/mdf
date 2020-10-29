@@ -1,5 +1,5 @@
 <?php
 
 return [
-    ["get", "/", "IndexController", "index"]
+    ["get", "/", "IndexController", "index"],
 ];

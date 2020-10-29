@@ -1,5 +1,5 @@
 {
-  "name": "mjakobi/mdf",
+  "name": "mrius-jakobi/mdf",
   "description": "A microframework",
   "minimum-stability": "stable",
   "license": "MIT",
@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+    "php-di/php-di": "^6.3"
   },
   "autoload": {
     "psr-4": {

@@ -4,7 +4,7 @@
 namespace MDF\Router;
 
 
-use DI\Container;
+use MDF\DI\Container;
 use MDF\Http\Request;
 use MDF\Http\Response;
 
@@ -21,6 +21,11 @@ class Router
      * Router constructor.
      */
     public function __construct() {
+        $this->initDispatcher();
+    }
+
+    public function initDispatcher()
+    {
         $this->dispatcher = \FastRoute\simpleDispatcher(function (RouteCollector $r) {
             $routes = include("../app/routes.php");
 
@@ -51,6 +56,7 @@ class Router
             case Dispatcher::FOUND;
                 $controller = $route[1];
                 $parameters = $route[2];
+
 
                 $content = call_user_func_array($controller, $parameters);
         }

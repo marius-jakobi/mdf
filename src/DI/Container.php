@@ -4,22 +4,22 @@
 namespace MDF\DI;
 
 use \DI\ContainerBuilder;
-use \DI\Container;
+use \DI\Container as DIContainer;
 
 
-class DIContainer
+class Container
 {
     /**
      * @var ContainerBuilder
      */
     private ContainerBuilder $builder;
     /**
-     * @var Container
+     * @var DIContainer
      */
-    private Container $container;
+    private DIContainer $container;
 
     /**
-     * DIContainer constructor.
+     * Container constructor.
      * @throws \Exception
      */
     public function __construct() {
@@ -29,12 +29,10 @@ class DIContainer
     }
 
     /**
-     * @return Container
+     * @return DIContainer
      */
-    public function getContainer(): Container
+    public function getContainer(): DIContainer
     {
         return $this->container;
     }
-
-
 }

@@ -13,8 +13,6 @@ use FastRoute\Dispatcher;
 
 class Router
 {
-    private const CONTROLLER_NAMESPACE = "App\\Controller\\";
-
     private Dispatcher $dispatcher;
 
     /**
@@ -30,7 +28,7 @@ class Router
             $routes = include("../app/routes.php");
 
             foreach ($routes as $route) {
-                $r->addRoute(strtoupper($route[0]), $route[1], [self::CONTROLLER_NAMESPACE . $route[2], $route[3]]);
+                $r->addRoute($route->method, $route->uri, [$route->controller, $route->action]);
             }
         });
     }

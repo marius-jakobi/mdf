@@ -1,5 +1,8 @@
 <?php
 
+use \MDF\Router\Route;
+
 return [
-    ["get", "/", "IndexController", "index"],
+    Route::get('/', 'IndexController', 'index'),
+    Route::get('/hello/{name}', 'IndexController', 'hello'),
 ];
